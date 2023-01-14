@@ -7,25 +7,29 @@ class Program
         Random randomGenerator = new Random();
         int number = randomGenerator.Next(1, 101);
 
+
         Console.Write("What is your guess?");
         string guessinput = Console.ReadLine();
         int guess = int.Parse(guessinput);
 
         string response = "";
 
-        if (guess == number)
+        while (guess != number)
         {
-            response = "Correct!";
-        }
-        else if (guess < number)
-        {
-            response = "Higher";
-        }
-        else if (guess > number)
-        {
-            response = "Lower";
-        }
+            if (guess == number)
+            {
+                response = "Correct!";
+            }
+            else if (guess < number)
+            {
+                response = "Higher";
+            }
+            else if (guess > number)
+            {
+                response = "Lower";
+            }
 
-        Console.WriteLine($"{response}");
+            Console.WriteLine($"{response}");
+        }
     }
 }
